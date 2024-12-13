@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oye Dumbo</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #87CEFA, #FFFAF0);
+      overflow: hidden;
+    }
+    .flower {
+      position: relative;
+      animation: grow 3s ease-in-out forwards;
+    }
+    .stem {
+      width: 5px;
+      height: 100px;
+      background: green;
+      margin: 0 auto;
+      transform: scaleY(0);
+      animation: growStem 2s ease-in-out forwards;
+    }
+    .petals {
+      width: 50px;
+      height: 50px;
+      background: pink;
+      border-radius: 50%;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      animation: bloom 2s ease-in-out 2s forwards;
+    }
+    .text {
+      font-family: 'Comic Sans MS', sans-serif;
+      font-size: 2rem;
+      color: #333;
+      text-align: center;
+      opacity: 0;
+      margin-top: 20px;
+      animation: appear 1s ease-in-out 4s forwards;
+    }
+
+    @keyframes growStem {
+      to {
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes bloom {
+      to {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flower">
+    <div class="stem"></div>
+    <div class="petals"></div>
+  </div>
+  <div class="text">Oye Dumbo</div>
+</body>
+</html>
